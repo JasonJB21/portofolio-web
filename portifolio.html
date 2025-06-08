@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jason Jeremy Butar Butar - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      line-height: 2;
+      color: #2c2c2c;
+      background: linear-gradient(135deg, #000000 0%, #8d8989 100%);
+      letter-spacing: 0.7px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+      color: #f8f9fa;
+      padding: 6rem 0 3rem 0;
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #d6d8db;
+      margin-bottom: 1.5rem;
+      object-fit: cover;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: #f8f9fa;
+    }
+
+    .profile .subtitle {
+      font-size: 1.1rem;
+      color: #d6d8db;
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    main {
+      padding: 4rem 0;
+    }
+
+    section {
+      margin-bottom: 4rem;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(214, 216, 219, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    h2 {
+      color: #2c2c2c;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-align: center;
+      font-weight: 300;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, #2c2c2c, #d6d8db);
+    }
+
+    #about p {
+      font-size: 1.1rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #4a4a4a;
+      line-height: 1.8;
+    }
+
+    .skills-category h3 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: #2c2c2c;
+      font-weight: 400;
+      position: relative;
+    }
+
+    .skills-category h3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 2px;
+      background: #d6d8db;
+    }
+
+    .skills-badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .skill-badge {
+      background: linear-gradient(135deg, #868585, #5f5b5b);
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+      text-align: center;
+    }
+
+    .skill-badge:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(214, 216, 219, 0.3);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      border-color: #2c2c2c;
+    }
+
+    .project-card h3 {
+      color: #2c2c2c;
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .project-card p {
+      margin-bottom: 2rem;
+      color: #5a5a5a;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+      color: #f8f9fa;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border-radius: 30px;
+      transition: all 0.4s ease;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+
+    .project-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(44, 44, 44, 0.4);
+    }
+
+    footer {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+      color: #d6d8db;
+      text-align: center;
+      padding: 3rem 0;
+      margin-top: 4rem;
+    }
+
+    footer p {
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 1024px) {
+      .skills-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 5rem 0 2rem 0;
+        margin-top: 60px;
+      }
+
+      .profile h1 {
+        font-size: 2.2rem;
+      }
+
+      section {
+        padding: 2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      header {
+        padding: 4rem 0 2rem 0;
+      }
+
+      .profile h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+      }
+
+      .profile .subtitle {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="profile">
+        <img src="Foto.jpeg" alt="Jason Jeremy" class="profile-img"/>
+        <h1>Jason Jeremy Butar Butar</h1>
+        <p class="subtitle">Frontend Developer</p>
+        <p>jasonjeremybb@gmail.com</p>
+        <a href="https://github.com/JasonJB21" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/jasonjeremybb/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          I am a passionate frontend developer with an unwavering commitment to crafting exceptional digital experiences. My journey in computer science has equipped me with both technical proficiency and creative vision, allowing me to bridge the gap between functionality and aesthetics. I thrive on transforming complex ideas into elegant, user-centric solutions that not only meet but exceed expectations.
+        </p>
+      </section>
+
+      <section id="skills">
+        <h2>Professional Competencies</h2>
+        <div class="skills-category">
+          <h3>Hard Skill</h3>
+          <div class="skills-badge-container">
+            <div class="skill-badge">Python</div>
+            <div class="skill-badge">SQL</div>
+            <div class="skill-badge">Boostrap</div>
+            <div class="skill-badge">Git</div>
+            <div class="skill-badge">Figma</div>
+        </div>
+
+        </div>
+        <div class="skills-category">
+          <h3>Software Skill</h3>
+          <div class="skills-badge-container">
+            <div class="skill-badge">JavaScript</div>
+            <div class="skill-badge">PHP</div>
+            <div class="skill-badge">HTML</div>
+            <div class="skill-badge">CSS</div>
+          </div>
+        </div>
+
+        <div class="skills-category" style="margin-top: 3rem;">
+          <h3>Soft Skills</h3>
+          <div class="skills-badge-container">
+            <div class="skill-badge">Communication</div>
+            <div class="skill-badge">Teamwork</div>
+            <div class="skill-badge">Problem Solving</div>
+            <div class="skill-badge">Adaptability</div>
+            <div class="skill-badge">Leadership</div>
+            <div class="skill-badge">Responsibility</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Lights Out</h3>
+            <p>
+              implementasi permainan Lights Out berbasis GUI menggunakan Python dengan modul Tkinter. Pemain diminta mematikan semua lampu (warna kuning) pada grid 3x3.
+              Python
+              Tkinter (tk.Button, ScrolledText)
+              Algoritma pencarian (Brute Force dan Backtracking)
+            </p>
+            <a href="https://github.com/JasonJB21/LightsOut" class="project-link" target="_blank">Explore Repository</a>
+          </div>
+
+          <div class="project-card">
+            <h3>KitchenSync</h3>
+            <p>
+              Aplikasi web yang dibangun menggunakan PHP, HTML, CSS, dan JavaScript, dengan sistem login/register dan fitur interaktif seperti unggah resep, diskusi, hingga sistem pembayaran dan pengiriman. ditujukan untuk komunitas pecinta masakan yang ingin berbagi ilmu resep makanan.
+            </p>
+            <a href="https://github.com/JasonJB21/KitchenSync" class="project-link" target="_blank">Explore Repository</a>
+          </div>
+
+          <div class="project-card">
+            <h3>Web Film</h3>
+            <p>
+              aplikasi web berbasis Java menggunakan JSP yang memungkinkan pengguna melihat dan memberikan ulasan terhadap film-film populer
+            </p>
+            <a href="https://github.com/JasonJB21/PBO-Tubes-Film" class="project-link" target="_blank">Explore Repository</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Jason Jeremy. Crafted with precision and passion.</p>
